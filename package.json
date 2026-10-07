@@ -1,0 +1,20 @@
+{
+  "name": "philippines-municipal-rainfall",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Auditable CHIRPS v3 municipal precipitation-volume workflow for the Philippines.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "attach-psgc": "node src/attach-psgc.mjs",
+    "chirps-volume": "node src/chirps-municipal-volume.mjs",
+    "check": "node --check src/attach-psgc.mjs && node --check src/chirps-municipal-volume.mjs && node --check src/chirps-batch-volume.mjs",
+    "chirps-batch": "node src/chirps-batch-volume.mjs"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0",
+    "sharp": "^0.35.4"
+  }
+}
